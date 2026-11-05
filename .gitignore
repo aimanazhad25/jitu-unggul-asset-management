@@ -1,0 +1,51 @@
+# Flutter and Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub/
+.pub-cache/
+build/
+coverage/
+**/doc/api/
+**/ephemeral/
+**/.plugin_symlinks/
+*.iml
+
+# Local development
+.idea/
+.vscode/
+.DS_Store
+*.log
+.gradle/
+**/.gradle/
+android/local.properties
+ios/Flutter/Generated.xcconfig
+ios/Flutter/flutter_export_environment.sh
+ios/Flutter/.last_build_id
+
+# Firebase local and production config
+.firebase/
+.firebaserc
+lib/firebase_options.dart
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+.env
+.env.*
+!.env.example
+
+# Credentials, signing, exported business data
+android/key.properties
+*.jks
+*.keystore
+*.p12
+*.pem
+*.key
+*service-account*.json
+*service_account*.json
+*credentials*.json
+backup/
+**/chrome-device/
+*.sqlite
+*.db
+*.csv.bak

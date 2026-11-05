@@ -1,4 +1,4 @@
-# Flutter and Dart
+# Flutter and Dart outputs
 .dart_tool/
 .flutter-plugins
 .flutter-plugins-dependencies
@@ -12,7 +12,7 @@ coverage/
 **/.plugin_symlinks/
 *.iml
 
-# Local development
+# IDE / local artifacts
 .idea/
 .vscode/
 .DS_Store
@@ -24,7 +24,7 @@ ios/Flutter/Generated.xcconfig
 ios/Flutter/flutter_export_environment.sh
 ios/Flutter/.last_build_id
 
-# Firebase local and production config
+# Firebase local / production configuration
 .firebase/
 .firebaserc
 lib/firebase_options.dart
@@ -34,7 +34,7 @@ ios/Runner/GoogleService-Info.plist
 .env.*
 !.env.example
 
-# Credentials, signing, exported business data
+# Signing / private credentials
 android/key.properties
 *.jks
 *.keystore
@@ -44,6 +44,8 @@ android/key.properties
 *service-account*.json
 *service_account*.json
 *credentials*.json
+
+# Developer browser data, backups and exports
 backup/
 **/chrome-device/
 *.sqlite

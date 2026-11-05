@@ -1,46 +1,70 @@
 # Jitu Unggul — Asset Management Application
 
-A Flutter-based inventory and event-equipment asset management application developed by **Aiman Azhad** for **Jitu Unggul**, a game and event equipment supplier.
+A Flutter-based inventory and event-equipment asset management application developed as an independent software project for **Jitu Unggul**, a games and event equipment supplier.
 
-> **Private project repository.** The application is live on Firebase Hosting. Source code must be uploaded only from the sanitized, GitHub-ready project package. Business data and deployment credentials are not included in that package.
+> **Portfolio showcase:** The repository contains application source code. Real business data and deployment credentials are intentionally not included.
 
-**Live application:** https://jitu-unggul-asset-management.web.app  
-**Developer:** https://github.com/aimanazhad25  
-**Tech:** Flutter, Dart, Firebase Authentication, Cloud Firestore, Firebase Hosting
+**Live application:** [jitu-unggul-asset-management.web.app](https://jitu-unggul-asset-management.web.app)  
+**Developer:** [Aiman Azhad](https://github.com/aimanazhad25)  
+**Status:** Deployed on Firebase Hosting. Access to application features may require an authorized account.
 
 ## Features
 
-- Firebase Authentication and user access
-- Manage inventory records and equipment details
-- Track event allocations, check-outs, and returned items
-- Maintenance, damaged-item and missing-item records
-- Inventory import, movement history and reports
+- **User sign-in:** Firebase Authentication and Firestore-backed user profiles.
+- **Inventory:** Add, edit, list, and maintain records of equipment.
+- **Event planning:** Manage event records and allocate items to events.
+- **Asset movement:** Record item check-outs and returns with movement history.
+- **Maintenance and exceptions:** Review damaged or missing equipment and track maintenance.
+- **Bulk import:** Import inventory from supported spreadsheet or CSV files.
+- **Reports:** Generate and review asset and movement information, with PDF/export-related dependencies.
 
-## Project layout
+## Tech stack
 
-- `lib/` — Flutter/Dart application and models
-- `assets/` — App branding
-- `web/` — Flutter web assets
-- `android/`, `ios/`, `macos/`, `windows/`, `linux/` — Platform runner projects
-- `pubspec.yaml` — Dependencies
-- `firebase.json` — Firebase Hosting configuration
+| Area | Technology |
+| --- | --- |
+| Application | Flutter, Dart |
+| Authentication | Firebase Authentication |
+| Database | Cloud Firestore |
+| Hosting | Firebase Hosting |
+| Data import/export | file_picker, excel, csv, pdf, printing |
 
-## Local setup
+## Project structure
 
-1. Install Flutter and run `flutter doctor`.
-2. Run `flutter pub get` from the project directory.
-3. Set up an authorized Firebase project using `flutterfire configure`; do not commit production secrets or private credentials.
-4. Use `flutter run -d chrome` for web development.
+```text
+lib/
+  main.dart               # App initialization, login and dashboard
+  models/                 # Item, event, and movement data models
+  screens/                # Inventory, events, movements, maintenance, reports
+assets/                   # App branding
+web/                      # Flutter web hosting entry point
+android/, ios/, ...       # Flutter platform runner projects
+firebase.json             # Hosting configuration
+pubspec.yaml              # Flutter dependencies
+```
 
-The live Firebase deployment is separate from this source repository.
+## Run locally
 
-## Privacy and security
+1. Install the [Flutter SDK](https://docs.flutter.dev/get-started/install) and verify your environment with `flutter doctor`.
+2. Run `flutter pub get` inside the project directory.
+3. Configure **your own Firebase project**, including Authentication and Firestore, before running the app. The production Firebase client configuration is **not included** in this repository:
+   - Install the FlutterFire CLI following [Firebase's Flutter setup guide](https://firebase.google.com/docs/flutter/setup).
+   - Run `flutterfire configure` to create `lib/firebase_options.dart` and applicable platform Firebase configuration.
+4. Create authorized test users and associated `users/{uid}` profiles as required by the application.
+5. Start the app using `flutter run -d chrome` or another configured Flutter device.
 
-- Do not commit `android/key.properties`, keystores, local browser data, export backups, service-account keys or live customer/inventory records.
-- `lib/firebase_options.dart` and platform Firebase configuration are omitted from the GitHub-ready package; regenerate for your own Firebase project.
-- Confirm company permission before considering public access to source code.
-- Review Firestore security rules separately — Firebase Authentication by itself is not sufficient to protect the database.
+> The live URL points to the original Firebase deployment. Building this repository locally does not connect to that production database automatically.
 
-## Developer
+## Security and privacy
 
-Aiman Azhad — [GitHub](https://github.com/aimanazhad25) — [Email](mailto:aimanazhad4@gmail.com)
+- No login credentials, signing passwords, private keys, browser profiles, customer records, or Firebase service-account credentials should be committed.
+- `lib/firebase_options.dart`, `android/app/google-services.json`, and local deployment configuration are excluded from the public-source package to avoid publishing production configuration.
+- **Important:** Firebase Authentication alone does not secure Cloud Firestore. Verify that deployed Firestore security rules enforce per-user access and appropriate permissions before granting anyone access.
+- Do not add live inventory exports or screenshots that reveal business data.
+
+## Notes
+
+The project is presented as a software development portfolio example. The source is not supplied with an open-source license. Confirm appropriate permission from Jitu Unggul before making proprietary source code public.
+
+## Contact
+
+**Aiman Azhad** · [GitHub](https://github.com/aimanazhad25) · [Email](mailto:aimanazhad4@gmail.com)
